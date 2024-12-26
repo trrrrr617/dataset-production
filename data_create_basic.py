@@ -31,7 +31,7 @@ def answer_generate(message):
     return response.json().get("result")
 
 
-def get_nodes(request):   # 1为颜色，2为公司，3为需求
+def get_nodes(request):
     getting_nodes = []
     if request == 1:
         with open('basic_Color.json', 'r', encoding="utf-8") as f:
@@ -57,7 +57,6 @@ if __name__ == "__main__":
     for i in range(1, 4):
         dic = {}
         try:
-            # 获取所有LowPrice标签的节点
             nodes = get_nodes(i)
             print("Found {} nodes:".format(len(nodes)))
             count = 0
