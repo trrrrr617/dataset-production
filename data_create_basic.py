@@ -4,7 +4,7 @@ import requests
 
 
 key = ("https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=DXR"
-       "8hnVsIcH7Z0SQrx56TnM6&client_secret=53uI4Qek8y0jDAzmABgZvbZnU2ryNESN")
+       "[your key]&client_secret=[put your secret here]")
 
 
 def answer_generate(message):
