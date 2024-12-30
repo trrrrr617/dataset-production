@@ -2,12 +2,8 @@ import json
 import requests
 
 
-# key = ("https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=DXR"
-#         "8hnVsIcH7Z0SQrx56TnM6&client_secret=53uI4Qek8y0jDAzmABgZvbZnU2ryNESN")
-
-
 key = ("https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id="
-       "C93KMcNoA5prrkIOhYMERi0B&client_secret=l3rHGk3pU9f5DBOsfk5dTjyTzlZiwUdQ")
+       "[your key]&client_secret=[your secret key]")
 
 
 def answer_generate(message):
