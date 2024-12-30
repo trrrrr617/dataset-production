@@ -1,6 +1,6 @@
 Airconditioner Q&A dataset making
 
-This is a code for making datasets in user's intention recognizing which appears as Q&A. It needs files recording different nodes which user may wanted the conditioner to gain.
+This is a code for making datasets in user's intention recognizing which appears as Q&A. It needs files recording nodes of characteristics that user may wanted the conditioner to gain.
 
 The program is based on prompt engineering and free LLM apis(or local LLM)
 
