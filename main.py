@@ -24,7 +24,7 @@ nodes_Company = get_nodes("basic_Company.json")
 #    data_HighPrice = json.load(file_HighPrice)
 # with open("basic_LowPrice.json", 'r', encoding="utf-8") as file_LowPrice:
 #    data_LowPrice = json.load(file_LowPrice)
-for x in range(100):         # n times to run, in case error happen
+for x in range(2):         # n times to run, in case error happen
     main_dic = []
     for j in range(5):             # to every simple
         example = {}
@@ -48,15 +48,16 @@ for x in range(100):         # n times to run, in case error happen
             history1 = history
             random_key = ""
             if_company = "但不要刻意提及厂家"
+            example[("question" + str(i))] = "1"
             if order[i] == 4:
-                example[("question_angle"+str(i))] = "LowPrice"
+                example[("question_angle"+str(i))] = "最低价"
                 example[("entity" + str(i))] = str(price_low)
                 history += "、最低价"
                 random_key = "最低价"+str(price_low)
                 # example[("question"+str(i))] = str(random.choice(list(data_LowPrice))).replace("111",str(price_low))
                 # continue
             if order[i] == 5:
-                example[("question_angle"+str(i))] = "HighPrice"
+                example[("question_angle"+str(i))] = "最高价"
                 history += "、最高价"
                 example[("entity" + str(i))] = str(price_high)
                 random_key = "最高价"+str(price_high)
@@ -64,17 +65,17 @@ for x in range(100):         # n times to run, in case error happen
                 # continue
             if order[i] == 1:
                 random_key = random.choice(nodes_KeyNeed)
-                example[("question_angle"+str(i))] = "KeyNeed"
+                example[("question_angle"+str(i))] = "需求"
                 history += "、特殊需求"
                 example[("entity" + str(i))] = random_key
             if order[i] == 2:
                 random_key = random.choice(nodes_Color)
-                example[("question_angle"+str(i))] = "Color"
+                example[("question_angle"+str(i))] = "颜色"
                 history += "、颜色"
                 example[("entity" + str(i))] = random_key
             if order[i] == 3:
                 random_key = random.choice(nodes_Company)
-                example[("question_angle"+str(i))] = "Company"
+                example[("question_angle"+str(i))] = "厂家"
                 history += "、生产公司"
                 if_company = ""
                 example[("entity" + str(i))] = random_key
@@ -90,7 +91,7 @@ for x in range(100):         # n times to run, in case error happen
         main_dic.append(example)
     with open("final_data.json", 'r', encoding="utf-8") as final_data:
         data = json.load(final_data)
-    data.append(main_dic)
+    data += main_dic
     with open("final_data.json", 'w', encoding="utf-8") as final_data:
         json.dump(data, final_data, indent=4, ensure_ascii=False)
 
